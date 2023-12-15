@@ -1,0 +1,84 @@
+// *************************************
+//
+//   Typography
+//
+// *************************************
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;0,900;1,400&family=Zilla+Slab:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+// -------------------------------------
+//   Body
+// -------------------------------------
+
+body {
+    font: 400 1.8rem/1.5 $font-zilla-slab;
+  }
+  
+  // -------------------------------------
+  //   Headings
+  // -------------------------------------
+  
+  h1,
+  h2,
+  h3,
+  h4 {
+  }
+  
+  // -------------------------------------
+  //   Sizes
+  // -------------------------------------
+  
+  .font-size-24 {
+    font-size: 24px;
+  }
+  
+  // -------------------------------------
+  //   Styles
+  // -------------------------------------
+  
+  .no-underline {
+    text-decoration: none !important;
+  }
+  
+  .text-shadow {
+    text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.4);
+  }
+  
+  // -------------------------------------
+  //  Font weight
+  // -------------------------------------
+  
+  .font-weight-300 {
+    font-weight: 300;
+  }
+  
+  .font-weight-500 {
+    font-weight: 500;
+  }
+  
+  .font-weight-900 {
+    font-weight: 900;
+  }
+  
+  // -------------------------------------
+  //  Letter-spacing
+  // -------------------------------------
+  
+  .letter-spacing {
+    letter-spacing: 0.02em;
+  }
+  
+  .letter-spacing-neg {
+    letter-spacing: -0.02em;
+  }
+  
+  // -------------------------------------
+  //  Text styles
+  // -------------------------------------
+
+  .title {
+    font: 800 5rem/1.2 $font-zilla-slab;
+}
+
+.subtitle {
+    font: 400 2.6rem/1.2 'Zilla Slab', sans-serif;
+    color: #ff2b5d;
+}

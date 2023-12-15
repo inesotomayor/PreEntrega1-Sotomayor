@@ -1,23 +1,15 @@
-import { useState } from 'react'
+
 import './assets/scss/styles.scss'
+import ItemListContainer from './components/ItemListContainer'
+import NavBar from './components/NavBar'
 
 function App() {
 
   return (
-    <>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col text-center">
-            <h1 className="mb-5">Ready...</h1>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">1</div>
-          <div className="col">2</div>
-          <div className="col">3</div>
-        </div>
-      </div>
-    </>
+    <div className="min-h-screen d-flex flex-column">
+      <NavBar />
+      <ItemListContainer greeting="¡Bienvenidos!" subtitle="Lorem ipsum" />
+    </div>
   )
 }
 

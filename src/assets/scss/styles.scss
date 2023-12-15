@@ -1,9 +1,81 @@
 @import "/node_modules/bootstrap/scss/bootstrap";
+@import "src/assets/scss/reset.scss";
+@import "src/assets/scss/variables.scss";
+@import "src/assets/scss/typography.scss";
+@import "src/assets/scss/utilities.scss";
 
-#root {
-    width: 100%;
+
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    background: #f7f7f7;
+    padding: 0 40px;
+
+    .logo {
+        width: 200px;
+        margin: 10px auto;        
+    }
+    
+    .menu-list {
+        display: inline-flex;
+        justify-content: center;
+        gap: 30px;
+        font: 800 15px/1 $font-montserrat;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .menu-item {}
+
+    .menu-link {
+        color: #ff2b5d;
+        transition: $smooth;
+        display: block;
+        padding: 10px 15px;
+        &:hover {
+            color: #000;
+            transform: translateY(-2px);
+        }
+    }
+
+    .cart {
+        position: relative;
+        cursor: pointer;
+        margin-top: -12px;
+        &:hover {
+            .icon-bag {
+                 opacity: 1;
+            }
+            .cart-notification {
+                transform: scale(1.15);
+            }
+        }
+
+        .icon-bag {
+            opacity: .5;
+            transition: $smooth;
+        }
+
+        .cart-notification {
+            position: absolute;
+            bottom: -5px;
+            right: -3px;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            background: #ff2b5d;
+            color: #fff;            
+            font: 600 1.3rem/1.4 $font-zilla-slab;
+            transition: all .1s ease-in;
+            @include flex-centered;
+            span {
+                display: inline-block;
+                margin-top: -3px;
+            }
+
+        }
+    }
 }
 
-body {
-    padding: 10px;
-}

@@ -1,0 +1,62 @@
+// *************************************
+//
+//   RESET
+//
+// *************************************
+
+#root {
+  width: 100%;
+}
+
+// Reset rem to 10px ---> 1.4rem = 14px
+
+html,
+body {
+  font-size: 62.5%;
+}
+
+a {
+  cursor: pointer;
+}
+
+// -------------------------------------
+//   Reset list style
+// -------------------------------------
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// -------------------------------------
+//   Remove marquee from links :focus
+// -------------------------------------
+
+a,
+a:focus,
+input,
+input:focus,
+button,
+button:focus,
+select,
+select:focus {
+  outline: none;
+}
+
+// -------------------------------------
+//   Placeholder hide
+// -------------------------------------
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
