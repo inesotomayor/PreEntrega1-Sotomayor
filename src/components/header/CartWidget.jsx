@@ -1,5 +1,5 @@
 import React from 'react'
-import IconCart from '../assets/images/IconCart'
+import IconCart from '../../assets/images/IconCart'
 import CartNotification from './CartNotification'
 
 const CartWidget = () => {
