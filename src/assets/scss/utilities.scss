@@ -7,7 +7,15 @@
 @import "mixins.scss";
 
 .flex-centered {
+  @include flex-centered;
+}
+
+.flex-col-centered {
   @include flex-col-centered;
+}
+
+.absolute-centered {
+  @include absolute-centered;
 }
 
   // -------------------------------------
