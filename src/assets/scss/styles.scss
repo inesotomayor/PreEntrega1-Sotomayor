@@ -33,10 +33,10 @@
     .menu-item {}
 
     .menu-link {
-        color: #ff2b5d;
-        transition: $smooth;
+        @apply text-primary;        
         display: block;
         padding: 10px 15px;
+        transition: $smooth;
         &:hover {
             color: #000;
             transform: translateY(-2px);
@@ -62,14 +62,13 @@
         }
 
         .cart-notification {
+            @apply bg-primary text-white;
             position: absolute;
             bottom: -5px;
             right: -3px;
             border-radius: 50%;
             height: 20px;
-            width: 20px;
-            background: #ff2b5d;
-            color: #fff;            
+            width: 20px;     
             font: 600 1.3rem/1.4 $font-zilla-slab;
             transition: all .1s ease-in;
             span {
@@ -78,6 +77,20 @@
             }
 
         }
+    }
+}
+
+.btn {
+    @apply flex-centered text-center h-[50px] min-w-[50px];
+    &-primary {
+        @apply bg-primary text-white
+    }
+    &-secondary {
+        @apply bg-secondary
+    }
+
+    &.disabled {
+        @apply bg-secondary opacity-50 cursor-not-allowed;
     }
 }
 

@@ -24,20 +24,26 @@ const ItemCount = ({ stock }) => {
     return (
         <>
             <div className="text-center">
-                <p>Cantidad:</p>
+                <p className="mb-3">Cantidad:</p>
                 <div className="flex-centered gap-1 pb-5">
-                    <button onClick={restar} className={`btn px-4 text-24px 
-                    ${esCero ? 'btn-secondary disabled opacity-25' : ' btn-primary'}`}>
+
+                    <button onClick={restar} className={`btn text-24px
+                    ${esCero ? 'disabled' : 'btn-primary'}`}>
                         -
                     </button>
-                    <p className="flex-centered w-25 text-18px leading-none"><strong>{cantidad}</strong></p>
+
+                    <p className="flex-centered w-[80px] text-24px">
+                        <strong>{cantidad}</strong>
+                    </p>
+
                     <button onClick={sumar} className={`btn px-4 text-30px 
-                    ${excedeStock ? 'btn-secondary disabled opacity-25' : ' btn-primary'}`}>
+                    ${excedeStock ? 'disabled' : 'btn-primary'}`}>
                         +
                     </button>
+
                 </div>
-                <button onClick={agregarCarrito} className={`btn text-18px px-5 mb-5 
-                    ${esCero ? 'btn-secondary disabled opacity-25' : ' btn-primary'}`}>
+                <button onClick={agregarCarrito} className={`btn text-18px w-full px-5 mb-5 
+                    ${esCero ? 'disabled' : 'bg-333 text-white'}`}>
                     Agregar al carrito
                 </button>
             </div>
