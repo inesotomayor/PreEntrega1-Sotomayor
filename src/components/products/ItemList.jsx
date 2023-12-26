@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react'
 import ItemCount from './ItemCount'
 
 const ItemList = () => {
-    const [productos, setProductos] = useState([])
+    const [productos, setProductos] = useState([]) // Variable de estado + función que la actualiza
 
     useEffect(() => {
         const fetchProductos = () => {
             setTimeout(() => {
-                // Lista de productos:
-                const listaProductos = [
+                const listadoProductos = [ // Lista de productos:
                     {
                         id: 1,
                         nombre: "To all creatures (2022)",
@@ -25,8 +24,8 @@ const ItemList = () => {
                     { id: 7, nombre: "Producto G", precio: "$150.000,00", stock: 1 },
                     { id: 8, nombre: "Producto H", precio: "$90.000,00", stock: 4 },
                 ]
-                setProductos(listaProductos)
-            }, 2000) // Delay de 2 segundos para simular carga
+                setProductos(listadoProductos) // Llamada al listado
+            }, 2000) // Delay de 2 seg. para simular carga
         }
         fetchProductos()
     }, []) // Array vacío para que cargue una sola vez
