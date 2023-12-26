@@ -42,7 +42,8 @@ export default {
 			},
 
 			fontFamily: {
-				roboto: ['Roboto', 'sans-serif', 'system-ui'],
+				zillaSlab: ['Zilla Slab', 'serif'],
+				montserrat: ['Montserrat', 'sans-serif'],
 			},
 
 			fontSize: {

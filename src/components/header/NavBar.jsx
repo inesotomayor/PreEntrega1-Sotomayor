@@ -8,10 +8,10 @@ const NavBar = () => {
             <div className="col">
                 <div className="top-nav">
                     {/* Logo */}
-                    <Logo className="logo" />
+                    <Logo className="-mr-20" />
 
                     {/* Menu */}
-                    <ul className="menu-list flex-grow-1">
+                    <ul className="menu-list grow">
                         <li className="menu-item">
                             <a href="#" className="menu-link">Caligrafía</a>
                         </li>
