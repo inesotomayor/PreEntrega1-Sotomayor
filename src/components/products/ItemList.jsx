@@ -31,7 +31,7 @@ const ItemList = () => {
     }, []) // Array vacío para que cargue una sola vez
 
     return (
-        <ul className="w-full px-20 grid grid-cols-4 gap-10">
+        <ul className="w-full px-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10">
             {productos.map((producto) =>
                 <li key={producto.id} className="border p-10">
                     <img src={producto.foto} className="w-full mb-4" />

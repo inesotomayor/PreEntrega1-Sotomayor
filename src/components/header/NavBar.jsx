@@ -2,9 +2,9 @@ import React from 'react'
 import Logo from './Logo'
 import CartWidget from './CartWidget'
 
-const NavBar = () => {
+const NavBar = ({ className }) => {
     return (
-        <div className="row gx-0">
+        <div className={`row gx-0 ${className}`}>
             <div className="col">
                 <div className="top-nav">
                     {/* Logo */}
