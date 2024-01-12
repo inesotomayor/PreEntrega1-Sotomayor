@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from './Logo'
 import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom'
 
 const NavBar = ({ className }) => {
     return (
@@ -8,18 +9,20 @@ const NavBar = ({ className }) => {
             <div className="col">
                 <div className="top-nav">
                     {/* Logo */}
-                    <Logo className="-mr-20" />
+                    <Link to="/">
+                        <Logo className="-mr-20" />
+                    </Link>
 
                     {/* Menu */}
                     <ul className="menu-list grow">
                         <li className="menu-item">
-                            <a href="#" className="menu-link">Caligrafía</a>
+                            <Link to="/categoria/caligrafia" className="menu-link">Caligrafía</Link>
                         </li>
                         <li className="menu-item">
-                            <a href="#" className="menu-link">Lettering</a>
+                            <Link to="/categoria/lettering" className="menu-link">Lettering</Link>
                         </li>
                         <li className="menu-item">
-                            <a href="#" className="menu-link">Lettering Digital</a>
+                            <Link to="/categoria/lettering-digital" className="menu-link">Lettering Digital</Link>
                         </li>
                     </ul>
 
