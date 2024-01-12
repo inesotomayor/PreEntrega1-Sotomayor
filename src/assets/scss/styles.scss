@@ -9,17 +9,14 @@
 @tailwind utilities;
 
 .top-nav {
+    height: 150px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 10px;
     background: #f7f7f7;
     padding: 0 40px;
-
-    .logo {
-        width: 200px;
-        margin: 10px auto;        
-    }
     
     .menu-list {
         display: inline-flex;

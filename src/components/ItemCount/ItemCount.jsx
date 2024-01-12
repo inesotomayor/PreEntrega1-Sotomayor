@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 const ItemCount = ({ stock }) => {
 
@@ -17,16 +17,12 @@ const ItemCount = ({ stock }) => {
     const esCero = cantidad === 0
     const excedeStock = cantidad >= stock
 
-    // useEffect(() => {
-    // }, [])
-
-
     return (
         <>
             <div className="text-center">
-                <p className="mb-3">Cantidad:</p>
                 <div className="flex-centered gap-1 pb-5">
 
+                    {/* Restar hasta 0 */}
                     <button onClick={restar} className={`btn text-24px
                     ${esCero ? 'disabled' : 'btn-primary'}`}>
                         -
@@ -36,6 +32,7 @@ const ItemCount = ({ stock }) => {
                         <strong>{cantidad}</strong>
                     </p>
 
+                    {/* Sumar hasta stock */}
                     <button onClick={sumar} className={`btn px-4 text-30px 
                     ${excedeStock ? 'disabled' : 'btn-primary'}`}>
                         +
