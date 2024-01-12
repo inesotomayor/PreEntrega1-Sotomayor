@@ -22,7 +22,7 @@ function App() {
         <Routes>
           {/* Home */}
           <Route path="/" element={
-            <ItemListContainer greeting="¡Bienvenidos!" subtitle="Lorem ipsum" className="max-h-[calc(100vh-150px)] overflow-auto" />
+            <ItemListContainer greeting="¡Bienvenidos!" subtitle="Tienda online" className="max-h-[calc(100vh-150px)] overflow-auto" />
           } />
           {/* Filtrado categoría */}
           <Route path="/categoria/:categoria" element={<ItemListContainer greeting="Categoría: " />} />

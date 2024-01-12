@@ -37,7 +37,7 @@ const ItemListContainer = ({ greeting, subtitle, className }) => {
     return (
         <div className={`flex flex-col grow py-20 ${className}`}>
             <div className="text-center">
-                <h1 className="title">{greeting} {categoria}</h1>
+                <h1 className="font-montserrat text-600 text-primary text-14px text-left pl-20">{greeting} <strong>{categoria}</strong></h1>
                 <h2 className="subtitle pb-5 mb-5">{subtitle}</h2>
             </div>
             <ItemList productos={productos} />

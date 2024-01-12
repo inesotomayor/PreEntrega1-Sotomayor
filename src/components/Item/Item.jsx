@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 
 const Item = ({ producto }) => {
     return (
-        <li className="border p-10">
+        <li className="border p-6">
 
             {/* Categorías del producto con link a la categoría */}
-            <p className="font-montserrat text-[9px] tracking-widest text-primary hover:text-black uppercase mb-3">
+            <p className="font-montserrat text-[9px] tracking-widest text-primary hover:text-black uppercase mb-4">
                 <Link to={`/categorias/${producto.categoria}`}>
                     {producto.categoria}
                 </Link></p>
