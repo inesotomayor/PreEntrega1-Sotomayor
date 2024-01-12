@@ -25,7 +25,7 @@ function App() {
             <ItemListContainer greeting="¡Bienvenidos!" subtitle="Tienda online" className="max-h-[calc(100vh-150px)] overflow-auto" />
           } />
           {/* Filtrado categoría */}
-          <Route path="/categoria/:categoria" element={<ItemListContainer greeting="Categoría: " />} />
+          <Route path="/categoria/:categoria" element={<ItemListContainer breadcrum="Categoría: " />} />
           {/* Detalle de producto */}
           <Route path="/detalle/:id" element={<ItemDetailContainer />} />
           {/* Error 404 */}
