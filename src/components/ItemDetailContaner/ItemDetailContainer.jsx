@@ -19,11 +19,7 @@ const ItemDetailContainer = () => {
         traerProductos
             .then((respuesta) => {
                 // find() devuelve un único objeto, a diferencia de filter() que devuelve un array de objetos
-
-                // NO ANDA! :(
-                // const productoEncontrado = respuesta.find((producto) => producto.id === id)
-
-                const productoEncontrado = respuesta.find((producto) => producto.id === 2)
+                const productoEncontrado = respuesta.find((producto) => producto.id === Number(id))
                 setProducto(productoEncontrado)
             })
             .catch((error) => console.log(error))
