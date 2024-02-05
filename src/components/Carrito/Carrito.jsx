@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
+import IconTrash from '../../assets/images/IconTrash'
 
 const Carrito = () => {
 
@@ -34,7 +35,11 @@ const Carrito = () => {
                         <p>${producto.precio}</p>
                         <p>${producto.precio * producto.cantidad}</p>
                         {/* Función anónima para que no se autoejecute: () => eliminarProductoCarrito(producto) */}
-                        <button onClick={() => eliminarProductoCarrito(producto)} className="btn btn-secondary p-3">Eliminar producto</button>
+                        <button onClick={() => eliminarProductoCarrito(producto)}>
+                            <IconTrash height={40} fill="#000" className="fill-[#000] hover:fill-primary" />
+                            Eliminar producto
+
+                        </button>
                     </li>
                 ))}
 

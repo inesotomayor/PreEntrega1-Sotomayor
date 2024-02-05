@@ -11,10 +11,13 @@ const Checkout = () => {
         nombre: '',
         direccion: '',
         telefono: '',
-        email: ''
+        email: '',
+        emailRepetido: ''
     })
 
-    const { carrito, precioTotal } = useContext(CartContext)
+    const [idPedido, setIdPedido] = useState(null);
+
+    const { carrito, precioTotal, vaciarCarrito } = useContext(CartContext)
 
     const guardarDatosInput = (event) => {
         // Lo que se tipea: (event.target.value)
@@ -23,38 +26,68 @@ const Checkout = () => {
         // Modifica "nombre: event.target.value", sumando las letras tipeadas
         // setDatosForm({ ...datosForm, "nombre": event.target.value }) ---> Así no porque debería ser dinámico de todos los inputs
         setDatosForm({ ...datosForm, [event.target.name]: event.target.value })
-
     }
 
     const enviarForm = (event) => {
         // Evitar la recarga por defecto
         event.preventDefault()
 
-        // Darle formato al pedido
-        const pedido = {
-            comprador: { ...datosForm },
-            productos: [...carrito],
-            total: precioTotal()
+        const subirPedido = (pedido) => {
+            // Subir el pedido a Firebase - collection: "pedidos"
+            const pedidosRef = collection(db, "pedidos")
+            addDoc(pedidosRef, pedido)
+                .then((respuesta) => {
+                    setIdPedido(respuesta.id)
+                    // Limpiar carrito
+                    vaciarCarrito()
+                })
+                .catch((error) => console.log(error))
         }
 
-        // Subir el pedido a Firebase - collection: pedidos
-        const pedidosRef = collection(db, "pedidos")
-        addDoc(pedidosRef, pedido)
-            .then((respuesta) => console.log(respuesta))
-            .catch((error) => console.log(error))
+        // Comparar que los mails sean iguales
+        if (datosForm.email === datosForm.emailRepetido) {
+
+            // Darle formato al pedido
+            const pedido = {
+                comprador: { ...datosForm },
+                productos: [...carrito],
+                fecha: new Date(),
+                estado: 'En proceso',
+                total: precioTotal()
+            }
+            subirPedido(pedido)
+        }
+
+        else {
+            alert('Los campos de e-mail deben ser iguales')
+            return
+        }
+
 
     }
 
     return (
-        <>
-            <h1 className="mb-10">Checkout:</h1>
-            <FormCheckout
-                datosForm={datosForm}
-                guardarDatosInput={guardarDatosInput}
-                enviarForm={enviarForm}
-            />
-            <Link to="/carrito" className="btn btn-primary">Volver al carrito</Link>
-        </>
+        <div className="p-10">
+            <h1 className="title mb-10">Completar datos</h1>
+            <div className="checkout">
+                {idPedido ? (
+                    <div className="orden">
+                        <h2>¡Su pedido fue enviado con éxito!</h2>
+                        <p>N° de pedido: {idPedido} </p>
+                        <Link className="btn btn-primary" to="/">Ver más productos</Link>
+                    </div>
+                ) : (
+                    <>
+                        <FormCheckout
+                            datosForm={datosForm}
+                            guardarDatosInput={guardarDatosInput}
+                            enviarForm={enviarForm}
+                        />
+                        <Link to="/carrito" className="btn btn-primary">Volver al carrito</Link>
+                    </>
+                )}
+            </div>
+        </div>
     )
 }
 

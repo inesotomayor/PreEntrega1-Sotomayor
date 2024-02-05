@@ -10,14 +10,11 @@ const ItemDetail = ({ producto }) => {
 
     const { carrito, anadirProductoCarrito } = useContext(CartContext)
 
-    console.log(carrito)
-
     // Se recibe "cantidad" desde ItemCount
     const anadirProducto = (cantidad) => {
         setToggle(true)
         const productoCarrito = { ...producto, cantidad: cantidad }
         anadirProductoCarrito(productoCarrito)
-        console.log(`${'Ejecutando desde ItemDetail - Se agregó ' + cantidad + ' "' + productoCarrito.nombre + '" ' + 'al carrito'}`)
     }
 
     return (

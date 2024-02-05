@@ -1,8 +1,22 @@
-# React + Vite
+# Tienda E-commerce - Ine Sotomayor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+`Javascript`  `React.js` `Scss`  `Tailwind.css`
 
-Currently, two official plugins are available:
+Proyecto e-commerce de obras caligráficas. 
+Funcionalidades:
+- Filtrar obras por categorías
+- Ver detalle de las obras
+- Carrito de compra integrado
+- Checkout de pedidos con datos de usuario
+- Los datos s eguardan en una base de datos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Instalación del proyecto
+Instalación del proyecto con NPM:
+- `npm i`
+- `npm run dev`
+- `npm run build`
+
+## Contacto
+- Linkedin: <a href="https://www.linkedin.com/in/inesotomayor/" target="_blank">Ines Sotomayor</a>
+- IG: <a href="https://www.instagram.com/lalluviadeletras" target="_blank">Lluvia de Letras</a>
+- Mail: <a href="mailto:inesoyomayor@gmail.com">inesotomayor@gmail.com</a>

@@ -19,6 +19,10 @@ const FormCheckout = ({ datosForm, guardarDatosInput, enviarForm }) => {
                 <label htmlFor="email">E-mail</label>
                 <input type="email" id="email" name="email" value={datosForm.email} onChange={guardarDatosInput} className="border" />
             </div>
+            <div>
+                <label htmlFor="email">Repetir e-mail</label>
+                <input type="email" id="repetirEmail" name="repetirEmail" value={datosForm.repetirEmail} onChange={guardarDatosInput} className="border" />
+            </div>
 
             <button type="submit" onClick={enviarForm}>Enviar orden</button>
         </form>
