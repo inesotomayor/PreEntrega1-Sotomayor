@@ -17,6 +17,6 @@ Instalación del proyecto con NPM:
 - `npm run build`
 
 ## Contacto
-- Linkedin: <a href="https://www.linkedin.com/in/inesotomayor/" target="_blank">Ines Sotomayor</a>
-- IG: <a href="https://www.instagram.com/lalluviadeletras" target="_blank">Lluvia de Letras</a>
-- Mail: <a href="mailto:inesoyomayor@gmail.com">inesotomayor@gmail.com</a>
+- <a href="https://www.linkedin.com/in/inesotomayor/" target="_blank">Linkedin (Frontend Designer)</a>
+- <a href="https://www.instagram.com/lalluviadeletras" target="_blank">IG (Caligrafía & Lettering)</a>
+- <a href="mailto:inesoyomayor@gmail.com">Mail</a>
