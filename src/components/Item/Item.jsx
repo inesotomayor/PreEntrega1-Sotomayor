@@ -1,43 +1,46 @@
-import React from 'react'
-import ItemCount from '../ItemCount/ItemCount'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const Item = ({ producto }) => {
+
+    const [agrandar, setAgrandar] = useState(false)
+
+    const handleMouseOver = () => {
+        setAgrandar(true)
+    }
+
+    const handleMouseLeave = () => {
+        setAgrandar(false)
+    }
+
     return (
-        <li className="border p-6">
+        <li className={`relative border p-6 duration-300 ${agrandar ? 'scale-[1.025] shadow-lg border-primary/50' : 'scale-1'}`}
+            onMouseOver={handleMouseOver}
+            onMouseLeave={handleMouseLeave}
+        >
+            {/* Click en la card para ir al detalle */}
+            <Link to={`/detalle/${producto.id}`}>
+                <a className="absolute z-10 inset-0" />
+            </Link>
 
             {/* Categorías del producto con link a la categoría */}
-            <p className="font-montserrat text-[9px] tracking-widest text-primary hover:text-black uppercase mb-4">
-                <Link to={`/categorias/${producto.categoria}`}>
+            <p className="relative z-20 font-montserrat text-[9px] tracking-widest text-primary hover:text-black uppercase mb-4">
+                <Link to={`/categoria/${producto.categoria}`}>
                     {producto.categoria}
                 </Link></p>
 
-            {/* Foto del producto con link al detalle */}
-            <Link to={`/detalle/${producto.id}`}>
-                <img src={producto.foto} className="w-full mb-4" />
-            </Link>
+            {/* Foto */}
+            <img src={producto.foto} className="w-full mb-4" />
 
-            {/* Título del producto con link al detalle */}
-            <h3 className="text-22px leading-none mb-3">
-                <Link to={`/detalle/${producto.id}`}>
-                    {producto.nombre}
-                </Link>
-            </h3>
-            <p className="font-montserrat text-12px mb-2">{producto.descripcion}</p>
-            <p className="font-montserrat text-12px mb-3">Texto:&nbsp;
-                <strong>{producto.autor}</strong>
-            </p>
-            <p className="mb-6">
-                <strong>{producto.precio}</strong>
-            </p>
-            <p className="">
-                <Link to={`/detalle/${producto.id}`}>
-                    Ver detalle
-                </Link>
-            </p>
-            <ItemCount stock={producto.stock} />
+            {/* Título */}
+            <h3 className="text-22px leading-none mb-3">{producto.nombre} <span className="text-15px">({producto.ano})</span></h3>
 
-        </li>
+            {/* Precio */}
+            <p className="mb-2">
+                <strong>${producto.precio},00</strong>
+            </p>
+
+        </li >
     )
 }
 
