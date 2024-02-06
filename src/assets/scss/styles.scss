@@ -22,17 +22,36 @@
         display: inline-flex;
         justify-content: center;
         gap: 30px;
-        font: 800 15px/1 $font-montserrat;
+        font: 300 18px/1 $font-montserrat;
         text-transform: uppercase;
         letter-spacing: 0.04em;
     }
 
-    .menu-item {}
+    .menu-item {
+        position: relative;
+    }
+
+    .submenu-list {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        background: white;
+        box-shadow: 0 0 10px rgba(#000,0.05);
+        min-width: 220px;
+        font-size: 13px;
+        padding: 18px 10px;
+        border-radius: 6px;
+
+        .menu-link {
+            color: #777;
+        }
+    }
 
     .menu-link {
         @apply text-primary;        
         display: block;
         padding: 10px 15px;
+        cursor: pointer;
         transition: $smooth;
         &:hover {
             color: #000;

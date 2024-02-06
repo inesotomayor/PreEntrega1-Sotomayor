@@ -5,11 +5,13 @@ import NavBar from './components/NavBar/NavBar'
 import ItemDetailContainer from './components/ItemDetailContaner/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Carrito from './components/Carrito/Carrito'
-import Error404 from './components/Error404/Error404'
+import Error404 from './components/pages/Error404/Error404'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import Checkout from './components/Checkout/Checkout'
+import Bio from './components/pages/Bio/Bio'
+import Contacto from './components/pages/Contacto/Contacto'
 
 
 function App() {
@@ -31,15 +33,22 @@ function App() {
             <Route path="/" element={
               <ItemListContainer greeting="¡Bienvenidos!" subtitle="Tienda online" className="max-h-[calc(100vh-150px)] overflow-auto" />
             } />
-            {/* Filtrado categoría */}
+
+            {/* Categoría */}
             <Route path="/categoria/:categoria" element={<ItemListContainer breadcrum="Categoría: " />} />
+
             {/* Detalle de producto */}
             <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+
             {/* Carrito */}
             <Route path="/carrito" element={<Carrito />} />
+
             {/* Checkout */}
             <Route path="/checkout" element={<Checkout />} />
-            {/* Error 404 */}
+
+            {/* Otras páginas */}
+            <Route path="/bio" element={<Bio />} />
+            <Route path="/contacto" element={<Contacto />} />
             <Route path="*" element={<Error404 />} />
           </Routes>
 
