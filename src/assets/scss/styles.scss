@@ -8,6 +8,18 @@
 @tailwind components;
 @tailwind utilities;
 
+.container-general {
+    width: 100%;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px 15px;
+
+    &.carrito {
+        max-width: 960px;
+    }
+}
+
 .top-nav {
     height: 150px;
     width: 100%;
@@ -85,11 +97,12 @@
             border-radius: 50%;
             height: 20px;
             width: 20px;     
-            font: 600 1.3rem/1.4 $font-zilla-slab;
+            font: 600 1.1rem/1 $font-montserrat;
             transition: all .1s ease-in;
             span {
                 display: inline-block;
-                margin-top: -3px;
+                height: 14px;
+                margin-top: 2px;
             }
 
         }
@@ -107,10 +120,10 @@
 .btn {
     @apply flex-centered text-center py-4 px-8 min-h-[40px] rounded-[20px] font-montserrat font-medium text-11px leading-none uppercase duration-200;
     &-primary {
-        @apply bg-primary text-white hover:bg-222
+        @apply bg-primary text-white hover:bg-222;
     }
     &-secondary {
-        @apply bg-secondary hover:bg-999
+        @apply bg-secondary hover:bg-aaa;
     }
 
     &.disabled {

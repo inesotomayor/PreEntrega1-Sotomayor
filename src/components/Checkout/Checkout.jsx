@@ -4,6 +4,7 @@ import { CartContext } from '../../context/CartContext'
 import { addDoc, collection } from 'firebase/firestore'
 import db from "../../db/db"
 import { Link } from 'react-router-dom'
+import CarritoEnCheckout from './CarritoEnCheckout'
 
 const Checkout = () => {
 
@@ -35,7 +36,6 @@ const Checkout = () => {
         // setDatosForm({ ...datosForm, "nombre": event.target.value }) ---> Así no porque debería ser dinámico de todos los inputs
         setDatosForm({ ...datosForm, [event.target.name]: event.target.value })
     }
-
 
     const enviarForm = (event) => {
         // Evitar el refresh por defecto
@@ -114,26 +114,34 @@ const Checkout = () => {
     }
 
     return (
-        <div className="p-10">
-            <h1 className="title mb-10">Completar datos</h1>
-            <div className="checkout">
-                {idPedido ? (
-                    <div className="orden">
-                        <h2>¡Su pedido fue enviado con éxito!</h2>
-                        <p>N° de pedido: {idPedido} </p>
-                        <Link className="btn btn-primary" to="/">Ver más productos</Link>
-                    </div>
-                ) : (
-                    <>
-                        <FormCheckout
-                            datosForm={datosForm}
-                            guardarDatosInput={guardarDatosInput}
-                            formErrores={formErrores}
-                            enviarForm={enviarForm}
-                        />
-                        <Link to="/carrito" className="btn btn-primary">Volver al carrito</Link>
-                    </>
-                )}
+        <div className="flex gap-10 p-10">
+            <div className="grow">
+                <h1 className="title mb-10">Completar datos</h1>
+                <div className="checkout">
+                    {idPedido ? (
+                        <div className="orden">
+                            <h2>¡Su pedido fue enviado con éxito!</h2>
+                            <p>N° de pedido: {idPedido} </p>
+                            <Link className="btn btn-primary" to="/">Ver más productos</Link>
+                        </div>
+                    ) : (
+                        <>
+                            <FormCheckout
+                                datosForm={datosForm}
+                                guardarDatosInput={guardarDatosInput}
+                                formErrores={formErrores}
+                                enviarForm={enviarForm}
+                            />
+
+                        </>
+                    )}
+                </div>
+            </div>
+
+            {/* Carrito simplificado */}
+            <div className="w-[500px]">
+                <CarritoEnCheckout />
+
             </div>
         </div>
     )

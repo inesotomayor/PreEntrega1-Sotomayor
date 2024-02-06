@@ -74,8 +74,8 @@ const ItemListContainer = ({ greeting, breadcrum, subtitle, className }) => {
                     <ClipLoader color="#ccc" />
                 </div>
                 :
-                <>
-                    <div className="text-center pt-10 pb-4">
+                <main className="container-general">
+                    <div className="text-center pb-4">
                         <h1 className="title">{greeting}</h1>
                         <h2 className="subtitle pb-5 mb-5">{subtitle}</h2>
                         {breadcrum &&
@@ -84,7 +84,7 @@ const ItemListContainer = ({ greeting, breadcrum, subtitle, className }) => {
                             </p>}
                     </div>
                     <ItemList productos={productos} />
-                </>
+                </main>
             }
 
         </div>

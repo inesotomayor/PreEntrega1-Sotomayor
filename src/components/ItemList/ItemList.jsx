@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import Item from '../Item/Item'
 
 const ItemList = ({ productos }) => {

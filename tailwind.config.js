@@ -22,7 +22,7 @@ export default {
 
 			colors: {
 				'primary': '#ff2b5d',
-				'secondary': '#aaa',
+				'secondary': '#ccc',
 				'000': '#000000',
 				'111': '#111111',
 				'222': '#222222',

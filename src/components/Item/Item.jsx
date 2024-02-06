@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { CartContext } from '../../context/CartContext'
 
 const Item = ({ producto }) => {
+
+    const { formatoARS } = useContext(CartContext)
 
     const [agrandar, setAgrandar] = useState(false)
 
@@ -13,15 +16,15 @@ const Item = ({ producto }) => {
         setAgrandar(false)
     }
 
+
+
     return (
         <li className={`relative border p-6 duration-300 ${agrandar ? 'scale-[1.025] shadow-lg border-primary/50' : 'scale-1'}`}
             onMouseOver={handleMouseOver}
             onMouseLeave={handleMouseLeave}
         >
             {/* Click en la card para ir al detalle */}
-            <Link to={`/detalle/${producto.id}`}>
-                <a className="absolute z-10 inset-0" />
-            </Link>
+            <Link className="absolute z-10 inset-0 cursor-pointer" to={`/detalle/${producto.id}`} />
 
             {/* Categorías del producto con link a la categoría */}
             <p className="relative z-20 font-montserrat text-[9px] tracking-widest text-primary hover:text-black uppercase mb-4">
@@ -37,7 +40,7 @@ const Item = ({ producto }) => {
 
             {/* Precio */}
             <p className="mb-2">
-                <strong>${producto.precio},00</strong>
+                <strong>{formatoARS(producto.precio)}</strong>
             </p>
 
         </li >

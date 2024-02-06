@@ -15,7 +15,7 @@ const NavBar = ({ className }) => {
 
 
     return (
-        <div className={`row gx-0 ${className}`}>
+        <header className={`row gx-0 ${className}`}>
             <div className="col">
                 <div className="top-nav">
                     {/* Logo */}
@@ -60,8 +60,8 @@ const NavBar = ({ className }) => {
                     {/* Cart */}
                     <CartWidget />
                 </div>
-            </div >
-        </div >
+            </div>
+        </header>
     )
 }
 

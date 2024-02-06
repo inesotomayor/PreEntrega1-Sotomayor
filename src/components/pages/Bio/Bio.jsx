@@ -2,7 +2,7 @@ import React from 'react'
 
 const Bio = () => {
     return (
-        <div>
+        <div className="container-general">
             <p><strong>Soy Ine:</strong><br />
                 Escribo código como quien teje. <br />
                 Escribo letras como quien medita. <br />
