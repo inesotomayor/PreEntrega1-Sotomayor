@@ -46,6 +46,11 @@ const NavBar = ({ className }) => {
                                             Lettering Digital
                                         </Link>
                                     </li>
+                                    <li className="menu-item">
+                                        <Link to="/categoria/ilustracion" className="menu-link" onClick={cerrarMenu}>
+                                            Ilustración
+                                        </Link>
+                                    </li>
                                 </ul>
                             )}
                         </li>
