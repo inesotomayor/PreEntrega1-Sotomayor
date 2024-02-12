@@ -33,7 +33,10 @@ const Item = ({ producto }) => {
                 </Link></p>
 
             {/* Foto */}
-            <img src={producto.foto} className="w-full mb-4" />
+            <div className="min-h-[220px] flex items-center justify-center">
+                <img src={producto.foto} className="w-full mb-4" />
+            </div>
+
 
             {/* Título */}
             <h3 className="text-22px leading-none mb-3">{producto.nombre} <span className="text-15px">({producto.ano})</span></h3>

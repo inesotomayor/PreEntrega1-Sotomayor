@@ -12,6 +12,7 @@ import { CartProvider } from './context/CartContext'
 import Checkout from './components/Checkout/Checkout'
 import Bio from './components/pages/Bio/Bio'
 import Contacto from './components/pages/Contacto/Contacto'
+import Footer from './components/Footer/Footer'
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
           <Routes>
             {/* Home */}
             <Route path="/" element={
-              <ItemListContainer greeting="¡Bienvenidos!" subtitle="Tienda online" className="max-h-[calc(100vh-150px)] overflow-auto" />
+              <ItemListContainer greeting="Ine Sotomayor" subtitle="Caligrafía & Lettering" />
             } />
 
             {/* Categoría */}
@@ -50,11 +51,15 @@ function App() {
             <Route path="/bio" element={<Bio />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="*" element={<Error404 />} />
+
           </Routes>
+
+
 
         </div>
 
       </CartProvider>
+      <Footer />
     </BrowserRouter>
   )
 }

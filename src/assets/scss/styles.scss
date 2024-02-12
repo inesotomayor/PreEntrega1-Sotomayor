@@ -14,10 +14,17 @@
     margin-left: auto;
     margin-right: auto;
     padding: 30px 15px;
+    position: relative;
+    z-index: 10;
 
     &.carrito {
         max-width: 960px;
     }
+}
+
+.scrolled-container {
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
 }
 
 .top-nav {
@@ -28,15 +35,29 @@
     align-items: center;
     gap: 10px;
     background: #f7f7f7;
-    padding: 0 40px;
+    padding: 0 30px 0 20px;
+    position: relative;
+    z-index: 20;
+    @media (min-width: 640px) {
+        padding: 0 40px;
+    }
     
     .menu-list {
         display: inline-flex;
         justify-content: center;
-        gap: 30px;
-        font: 300 18px/1 $font-montserrat;
+        gap: 5px;
+        font: 300 14px/1 $font-montserrat;
         text-transform: uppercase;
         letter-spacing: 0.04em;
+        @media (min-width: 640px) {
+            gap: 15px;
+            font-size: 16px;
+
+        }
+        @media (min-width: 768px) {
+            gap: 30px;
+            fonr-size: 18px;
+        }
     }
 
     .menu-item {
@@ -93,7 +114,7 @@
             @apply bg-primary text-white;
             position: absolute;
             bottom: -4px;
-            right: -44px;
+            right: -18px;
             border-radius: 50%;
             height: 20px;
             width: 20px;     
@@ -129,5 +150,25 @@
     &.disabled {
         @apply bg-secondary opacity-50 cursor-not-allowed;
     }
+}
+
+.form-label {
+    @apply block font-montserrat text-14px font-bold mb-2;
+}
+
+.form-input {
+    @apply w-full border border-[#ededed] rounded-md px-1 py-2;
+}
+
+.form-input-error {
+    @apply border-red-500 text-red-500 #{!important};
+}
+
+.form-error {
+    @apply text-red-500 font-montserrat text-[11px];
+}
+
+.footer {
+    @apply text-center flex items-center justify-center h-[100px] bg-primary text-white text-12px font-montserrat;
 }
 

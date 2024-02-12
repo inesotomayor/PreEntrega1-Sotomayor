@@ -10,7 +10,7 @@ const CartWidget = () => {
     const carritoConItems = cantidadTotal() > 0
 
     return (
-        <div className="w-[50px]">
+        <div className="w-10">
             <Link to="/carrito" className="cart">
                 <IconCart height={40} fill="#000" className="icon-bag" />
                 {carritoConItems &&

@@ -20,7 +20,7 @@ const NavBar = ({ className }) => {
                 <div className="top-nav">
                     {/* Logo */}
                     <Link to="/" onClick={cerrarMenu}>
-                        <Logo className="-mr-20" />
+                        <Logo className="-mr-10 sm:-mr-20" />
                     </Link>
 
                     {/* Menu */}
@@ -39,11 +39,6 @@ const NavBar = ({ className }) => {
                                     <li className="menu-item">
                                         <Link to="/categoria/lettering" className="menu-link" onClick={cerrarMenu}>
                                             Lettering
-                                        </Link>
-                                    </li>
-                                    <li className="menu-item">
-                                        <Link to="/categoria/lettering-digital" className="menu-link" onClick={cerrarMenu}>
-                                            Lettering Digital
                                         </Link>
                                     </li>
                                     <li className="menu-item">

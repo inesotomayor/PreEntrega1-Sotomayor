@@ -113,38 +113,40 @@ const Checkout = () => {
         }
     }
 
-    return (
-        <div className="flex gap-10 p-10">
-            <div className="grow">
-                <h1 className="title mb-10">Completar datos</h1>
-                <div className="checkout">
-                    {idPedido ? (
-                        <div className="orden">
-                            <h2>¡Su pedido fue enviado con éxito!</h2>
-                            <p>N° de pedido: {idPedido} </p>
-                            <Link className="btn btn-primary" to="/">Ver más productos</Link>
-                        </div>
-                    ) : (
-                        <>
-                            <FormCheckout
-                                datosForm={datosForm}
-                                guardarDatosInput={guardarDatosInput}
-                                formErrores={formErrores}
-                                enviarForm={enviarForm}
-                            />
+    if (idPedido) {
+        return (
+            <div className="orden max-w-[500px] mx-auto my-20 text-center">
+                <h2 className="subtitle mb-5">¡Su pedido fue enviado con éxito!</h2>
+                <p className="mb-14">N° de pedido: <strong>{idPedido}</strong> </p>
+                <Link className="btn btn-primary w-[250px] mx-auto" to="/">Volver al Inicio</Link>
+            </div>
+        )
+    }
+    else {
+        return (
+            <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 p-10">
+                {/* Carrito simplificado */}
+                <div className="w-full lg:w-[500px] order-2 lg:order-1">
+                    <CarritoEnCheckout />
+                </div>
 
-                        </>
-                    )}
+                {/* Formulario de contacto */}
+                <div className="grow order-1 lg:order-2">
+
+                    <div className="checkout">
+                        <h1 className="subtitle mb-10">Datos para realizar el pedido</h1>
+                        <FormCheckout
+                            datosForm={datosForm}
+                            guardarDatosInput={guardarDatosInput}
+                            formErrores={formErrores}
+                            enviarForm={enviarForm}
+                        />
+                    </div>
                 </div>
             </div>
+        )
+    }
 
-            {/* Carrito simplificado */}
-            <div className="w-[500px]">
-                <CarritoEnCheckout />
-
-            </div>
-        </div>
-    )
 }
 
 export default Checkout

@@ -37,7 +37,14 @@ const ItemListContainer = ({ greeting, breadcrum, subtitle, className }) => {
                 let productosDb = respuesta.docs.map((producto) => {
                     return { id: producto.id, ...producto.data() }
                 })
-                setProductos(productosDb)
+                if (categoria) {
+                    // Mostrar todos los productos dentro de la categoria
+                    setProductos(productosDb)
+                } else {
+                    // Mostrar solo 10 elementos de la DB en la Home
+                    setProductos(productosDb.slice(0, 10))
+                }
+
             })
             // Si hubo error, mostrarlo
             .catch((error) => console.log("Hubo un error: " + error))
@@ -68,26 +75,41 @@ const ItemListContainer = ({ greeting, breadcrum, subtitle, className }) => {
     // -------------- //
 
     return (
-        <div className={`flex flex-col grow pb-20 ${className}`}>
+        <div className="flex flex-col grow pb-20">
             {loading ?
                 <div className="loading">
                     <ClipLoader color="#ccc" />
                 </div>
                 :
-                <main className="container-general">
-                    <div className="text-center pb-4">
-                        <h1 className="title">{greeting}</h1>
-                        <h2 className="subtitle pb-5 mb-5">{subtitle}</h2>
-                        {breadcrum &&
-                            <p className="font-montserrat text-600 text-primary text-14px text-left pl-20 mb-6">
-                                Categoría: <strong>{categoria}</strong>
-                            </p>}
-                    </div>
-                    <ItemList productos={productos} />
-                </main>
+                <>
+                    {
+                        // Mostrar intro y portada solo en Home, no en filtrado de categoría
+                        !categoria &&
+                        <>
+                            <main className="container-general !px-0 !pb-0">
+                                <div className="text-center pb-4">
+                                    <h1 className="title">{greeting}</h1>
+                                    <h2 className="subtitle py-5">{subtitle}</h2>
+                                </div>
+
+                            </main>
+                            <img className="w-full my-10" src="/images/portada.jpg" />
+                        </>
+                    }
+
+                    <main className="container-general">
+                        <div className="text-center pb-4">
+                            {breadcrum &&
+                                <p className="font-montserrat text-600 text-primary text-14px text-left pl-20 mb-6">
+                                    Categoría: <strong>{categoria}</strong>
+                                </p>}
+                            <ItemList productos={productos} />
+                        </div>
+                    </main>
+                </>
             }
 
-        </div>
+        </div >
     )
 }
 
