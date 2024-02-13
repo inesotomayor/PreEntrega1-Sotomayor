@@ -11,7 +11,7 @@ const Carrito = () => {
         return (
             <div className="container-general carrito text-center py-10">
                 <p className="mb-8">El carrito está vacío</p>
-                <Link to="/" className="btn btn-primary">Volver al incio</Link>
+                <Link to="/" className="btn btn-primary w-[250px] mx-auto">Volver al incio</Link>
             </div>
         )
     }

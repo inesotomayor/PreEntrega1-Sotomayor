@@ -115,9 +115,12 @@ const Checkout = () => {
 
     if (idPedido) {
         return (
-            <div className="orden max-w-[500px] mx-auto my-20 text-center">
-                <h2 className="subtitle mb-5">¡Su pedido fue enviado con éxito!</h2>
-                <p className="mb-14">N° de pedido: <strong>{idPedido}</strong> </p>
+            <div className="orden max-w-[600px] mx-auto my-20 text-center">
+                <h2 className="subtitle mb-3">¡Tu pedido fue enviado con éxito!</h2>
+                <p className="mb-10">Te contactaremos a la brevedad para coordinar el pago y el envío.</p>
+                <p className="mt-3 mb-14">N° de pedido: <br />
+                    <strong className="text-[21px]">{idPedido}</strong>
+                </p>
                 <Link className="btn btn-primary w-[250px] mx-auto" to="/">Volver al Inicio</Link>
             </div>
         )

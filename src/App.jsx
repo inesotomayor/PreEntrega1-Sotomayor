@@ -5,13 +5,13 @@ import NavBar from './components/NavBar/NavBar'
 import ItemDetailContainer from './components/ItemDetailContaner/ItemDetailContainer'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import Carrito from './components/Carrito/Carrito'
-import Error404 from './components/pages/Error404/Error404'
+import Error404 from './components/pages/Error404'
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './context/CartContext'
 import Checkout from './components/Checkout/Checkout'
-import Bio from './components/pages/Bio/Bio'
-import Contacto from './components/pages/Contacto/Contacto'
+import Bio from './components/pages/Bio'
+import Contacto from './components/pages/Contacto'
 import Footer from './components/Footer/Footer'
 
 
@@ -23,7 +23,7 @@ function App() {
 
       {/* Se envuelve en el Context Provider los componentes que vayan a ser afectado por él */}
       <CartProvider>
-        <div className="flex flex-col min-h-screen">
+        <div className="flex flex-col min-h-[calc(100vh-100px)]">
 
           {/* Navbar por fuera de <Routes> para que quede fija al cambiar de contenido */}
           <NavBar className="h-[150px]" />
